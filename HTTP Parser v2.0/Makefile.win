@@ -1,0 +1,33 @@
+# Project: htmlParse_v2.0
+# Makefile created by Dev-C++ 5.10
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+RES      = HTML_Parse_v2.0_private.res
+OBJ      = ../MultipleFilesSelection/main.o $(RES)
+LINKOBJ  = ../MultipleFilesSelection/main.o $(RES)
+LIBS     = -L"C:/Users/tmiksa/PortableApps/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib" -L"C:/Users/tmiksa/PortableApps/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -mwindows -g3
+INCS     = -I"C:/Users/tmiksa/PortableApps/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/tmiksa/PortableApps/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/tmiksa/PortableApps/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Users/tmiksa/PortableApps/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/include" -I"C:/Users/tmiksa/PortableApps/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/tmiksa/PortableApps/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Users/tmiksa/PortableApps/Dev-Cpp 5.10 TDM-GCC x64 4.8.1 Portable/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = HTML_Parse_v2.0.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+../MultipleFilesSelection/main.o: ../MultipleFilesSelection/main.cpp
+	$(CPP) -c ../MultipleFilesSelection/main.cpp -o ../MultipleFilesSelection/main.o $(CXXFLAGS)
+
+HTML_Parse_v2.0_private.res: HTML_Parse_v2.0_private.rc resource.rc
+	$(WINDRES) -i HTML_Parse_v2.0_private.rc --input-format=rc -o HTML_Parse_v2.0_private.res -O coff 
+

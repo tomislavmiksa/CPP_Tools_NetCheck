@@ -1,0 +1,7 @@
+v_1.0
+- GUI Implemented
+- List of Errors
+	- dummy entry shown in Result CSV
+	
+v_1.1
+- repaired dummy entry shown in Result CSV

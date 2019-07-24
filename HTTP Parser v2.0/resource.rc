@@ -1,0 +1,18 @@
+// resource.rc
+ 
+#include "resource.h"
+ 
+// Menu script
+ID_Menu MENU DISCARDABLE
+{
+    POPUP "File"
+    {
+        MENUITEM "Exit", ID_Exit
+    }
+    POPUP "Color"
+    {
+        MENUITEM "Red", ID_Red
+        MENUITEM "Green", ID_Green
+        MENUITEM "Blue", ID_Blue
+    }
+}
